@@ -1,6 +1,6 @@
  "use client"
 
-import userContext from "../context/UserContext";
+import userContext from "../context/userContext";
 import { useContext } from "react";
 import React from "react";
 
