@@ -9,20 +9,41 @@ function Login() {
   const [password, setPassword] = useState("");
   const { setUser, setError, error } = useContext(userContext) || {};
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
 
-    if (!username || !password) {
-      setError && setError("Please enter both username and password.");
-      setUser && setUser(null); // Clear previous user data if there’s an error
-    } else {
-      setUser && setUser({ username, password });
-      setError && setError(null); // Clear error if login is successful
-    }
+   
+
+  //   // if (setError) setError("Please enter both username and password.");
+  //   // if (setUser) setUser(null); // Clear previous user data if there’s an error
+
+  //   // // If login is successful:
+  //   // if (setUser) setUser({ username, password });
+  //   // if (setError) setError(null); // Clear error if login is successful
+
+
+  //   // if (!username || !password) {
+  //   //   setError && setError("Please enter both username and password.");
+  //   //   setUser && setUser(null); // Clear previous user data if there’s an error
+  //   // } else {
+  //   //   setUser && setUser({ username, password });
+  //   //   setError && setError(null); // Clear error if login is successful
+  //   // }
 
  
+  // };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  
+    if (!username || !password) {
+      if (setError) setError("Please enter both username and password.");
+      if (setUser) setUser(null); // Clear previous user data if there’s an error
+    } else {
+      if (setUser) setUser({ username, password });
+      if (setError) setError(null); // Clear error if login is successful
+    }
   };
-
+  
   return (
     <div className="flex items-center justify-center h-96 bg-gradient-to-r from-blue-500 to-purple-600">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
